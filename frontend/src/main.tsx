@@ -1,10 +1,28 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css'; // Import the CSS file
+import { BrowserRouter } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+const theme = createTheme({
+  typography:{
+    fontFamily: 
+      'Roboto Slab,serif',
+      allVariants:{
+        color:'white'
+
+      }
+  }
+
+})
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <ThemeProvider theme={theme}>
     <App />
-  </StrictMode>,
-)
+    </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+);
