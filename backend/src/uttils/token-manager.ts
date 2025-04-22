@@ -14,6 +14,7 @@ export const createToken = (id: string, email: string, expiresIn: string | numbe
   // Create options object with proper typing for expiresIn
   const options: SignOptions = {};
   
+  
   // Only set expiresIn if it's a valid type
   if (typeof expiresIn === 'number' || 
       ['string', 'number'].includes(typeof expiresIn)) {
